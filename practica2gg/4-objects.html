@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <link type="text/css" rel="stylesheet" href="./stylesheet.css"/>
+    <title>Some Title!</title>
+    <script>
+      function Persona(nom, ape) {
+        this.nombre = nom;
+        this.apellido = ape;
+      }
+
+      function Docente() {
+        this.materias = [];
+      }
+      Docente.prototype = new Persona("Claudia","Banchoff");
+
+      yo = new Persona("Gonzalo","Goral");
+      vos = new Persona("Juan","Perez");
+      claudia= new Docente;
+    </script>
+  </head>
+
+  <body>
+    <script>
+      alert(yo.nombre);
+    </script>
+
+  </body>
+</html>

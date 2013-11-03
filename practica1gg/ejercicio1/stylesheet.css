@@ -1,0 +1,21 @@
+h1 {
+	text-align: center;
+}
+
+td, th {
+	border: 1px solid black;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	border: 1px solid black;
+	text-align: center;
+}
+img {
+	display: block;
+	height: 100px;
+	width: 200px;
+	margin: auto;
+}
+

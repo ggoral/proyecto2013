@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link type="text/css" rel="stylesheet" href="./stylesheet.css"/>
+    <title>Some Title!</title>
+    <script>
+    function limpiar(){ 
+      localStorage.pagecount=0;
+      }
+    </script>
+  </head>
+
+  <body>
+    <input type="button" value="limpiar" onclick="limpiar()">
+    <script type="text/javascript">
+
+      if (localStorage.pagecount)
+      {
+      localStorage.pagecount=Number(localStorage.pagecount) +1;
+      }
+    else
+      {
+      localStorage.pagecount=1;
+      }
+    document.write("Visitas: " + localStorage.pagecount + " vez(ces).");
+
+    </script> 
+  </body>
+</html>

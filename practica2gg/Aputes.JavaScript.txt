@@ -1,0 +1,14 @@
+var nameFunction = function (aParameter) {
+  // variable definition  
+  var val = number / 3;
+
+  // Function Body
+  console.log(val);
+};
+
+
+var functionName = function( ) {
+    code code code;
+    code code code;
+    (more lines of code); 
+};

@@ -1,0 +1,20 @@
+body{
+  font-size:15px;
+  font-style:Arial;
+  background-color:orange;
+}
+
+h1{
+  color:navy;
+  font-style:italic;
+}
+
+h2{
+  color:green;
+  font-style:bolder;
+}
+
+div{
+  margin-left:10px;
+  margin-bottom:15px;
+}

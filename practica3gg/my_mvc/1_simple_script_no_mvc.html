@@ -1,0 +1,39 @@
+<?php
+ 
+// Conectar con la base de datos y seleccionarla
+$conexion = mysql_connect('localhost', 'miusuario', 'micontrasena');
+mysql_select_db('blog_db', $conexion);
+ 
+// Ejecutar la consulta SQL
+$resultado = mysql_query('SELECT fecha, titulo FROM articulo', $conexion);
+?>
+ 
+<html>
+  <head>
+    <title>Listado de Artículos</title>
+  </head>
+  <body>
+   <h1>Listado de Artículos</h1>
+   <table>
+     <tr><th>Fecha</th><th>Titulo</th></tr>
+<?php
+  // Mostrar los resultados con HTML
+  while ($fila = mysql_fetch_array($resultado, MYSQL_ASSOC))
+  {
+    echo "\t<tr>\n";
+    printf("\t\t<td> %s </td>\n", $fila['fecha']);
+    printf("\t\t<td> %s </td>\n", $fila['titulo']);
+    echo "\t</tr>\n";
+  }
+  ?>
+      </table>
+    </body>
+  </html>
+   
+<?php
+ 
+// Cerrar la conexion
+mysql_close($conexion);
+ 
+?>
+

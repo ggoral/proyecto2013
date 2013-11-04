@@ -1,4 +1,4 @@
 #!/bin/bash
 
-chmod 777 -R *
+chmod 777 -R practica*
 scp -r $PWD/* root@172.16.207.133:/var/www/proyecto2013

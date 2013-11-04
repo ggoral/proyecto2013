@@ -17,7 +17,7 @@ try {
       //entra porque encontro al usuario
       $rol = $result[0]['user'];
       $perfil = $usuario->obtener_pass(array($rol));
-      require 'controller.php';      
+      include 'controller.php';      
       }
     else{
       echo "pass error";

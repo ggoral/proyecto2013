@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reserva de Pasajes</title>
+    <script type="text/javascript" src="./validateform.js"></script>
+  </head>
+
+  <body>
+    <h1>Reserva de Pasajes</h1>
+    <form id="login_form" action="login.php" method="get" onsubmit="return validarFormulario()">
+      <label for="firstname">Nombre:</label>
+      <input id="firstname" type="text" tabindex="1" value="" name="firstname" onkeypress="Javascript:return NoNumerico(event)"><br>
+      <label for="lastname">Apellido:</label>
+      <input id="lastname" type="text" tabindex="2" value="" name="lastname"><br>
+      <label for="dni_tipo">Documento(tipo):</label>
+      <select id="dni_tipo" name="dni_tipo" tabindex="3">
+        <option value="du">DU</option>
+        <option value="lc">LC</option>
+        <option value="le">LE</option>
+      </select>
+      <label for="dni_num">Numero:</label>
+      <input id="dni_num" type="text" tabindex="4" value="" name="dni_num" maxlength="8" size="8">
+      <label for="telefono">Telefono:</label>
+      <input id="telefono" type="text" tabindex="5" value="" name="telefono"><br>
+      <label for="fecha_nac">Fecha de Nacimiento:</label>
+      <input id="fecha_nac" type="text" tabindex="6" value="" name="fecha_nac_a" maxlength="4" size="4">
+      /
+      <input id="fecha_nac" type="text" tabindex="6" value="" name="fecha_nac_m" maxlength="2" size="2">
+      /
+      <input id="fecha_nac" type="text" tabindex="6" value="" name="fecha_nac_d" maxlength="2" size="2"><br>
+      <label for="fecha_res">Fecha de Reserva:</label>
+      <input id="fecha_res" type="text" tabindex="7" value="" name="fecha_res_a" maxlength="4" size="2">
+      /
+      <input id="fecha_res" type="text" tabindex="7" value="" name="fecha_res_m" maxlength="2" size="1">
+      /
+      <input id="fecha_res" type="text" tabindex="7" value="" name="fecha_res_d" maxlength="2" size="1"><br>
+      <label for="observacion">Observaciones:</label><br>
+      <textarea id="observacion" tabindex="8" name="observacion" rows="8" cols="50"/></textarea><br>
+      <input name="enviar" type="submit" value="Establecer Reserva" tabindex="9">
+      <input name="borrar" type="reset" value="Borrar Todo" tabindex="10">
+    </form>
+  </body>
+</html>

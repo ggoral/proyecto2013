@@ -2,7 +2,7 @@
 
 require_once "database.php";
 
-class Articulo extends database {
+class Articulo extends Database {
 
 function obtener_articulo_por_nombre($attr=null)
   {

@@ -1,20 +1,12 @@
 <!DOCTYPE html>
-<html>
   <head>
   	<meta charset="utf-8">
   	<title id="pageTitle">Welcome to the real World</title>
-    <script type="text/javascript" src="validate_form.js"></script>
-    <script>
-      function salir(){
-        return false;
-      }
-    </script>
   </head>
   <body>
-    <!-- onsubmit="return validate_form()" onsubmit="return salir()" !-->
-    <form id="login_form" onsubmit="return validate_form()" method="get" action="login.php">
+    <form id="login_form" action="login.php" method="post">
       <label for="user">User:</label>
-      <input type="text" name="user" id="user" value="" tabindex="1" onkeypress="return NoNumerico(event)">
+      <input type="text" name="user" id="user" value="" tabindex="1">
       <label for="pass">Password:</label> 
       <input type="password" name="pass" id="pass" tabindex="2">
       <input type="checkbox" name="persistent" id="persistent_box" value="1" tabindex="3">

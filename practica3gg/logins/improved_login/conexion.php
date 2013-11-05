@@ -3,10 +3,8 @@
 class Conexion {
   private $conexion;
 
-  function crear_conexion()
-    {
-      if(!isset($this->conexion))
-      {
+  function crear_conexion(){
+      if(!isset($this->conexion)){
         $db_host="127.0.0.1";
         $db_user="ggoral";
         $db_pass="proyecto";
@@ -15,32 +13,26 @@ class Conexion {
       }
     }
 
-  function cerrar_conexion()
-    {
+  function cerrar_conexion(){
       $this->conexion = null;
     }
 
-  function consulta($consulta, $atributos=null)
-    {
+  function consulta($consulta, $atributos=null){
       $this->crear_conexion();
-      try
-      {
+      try{
         $query = $this->conexion->prepare($consulta);
         $query->execute($atributos);
         $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
         //$resultado = $query->fetch();
       }
-      catch(PDOException $e)
-      {
+      catch(PDOException $e){
         $resultado = 'Error: ' . $e->getMessage();
       }
       return $resultado;
     }
  
-  function cantidad($resultado)
-    {
+  function cantidad($resultado){
       return sizeof($resultado);
     }
   }
-
 ?>

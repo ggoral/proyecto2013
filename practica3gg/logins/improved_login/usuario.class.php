@@ -2,7 +2,7 @@
 
 require_once "conexion.php";
 
-class Usuario extends Conexion {
+class Usuario{
 
 function obtener_usuario($attr=null){
     $this->crear_conexion();

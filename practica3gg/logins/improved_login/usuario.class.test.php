@@ -1,5 +1,5 @@
 <?php
-require_once "modelo.php";
+require_once "usuario.class.php";
 
 $usuario = new Usuario();
 //$atributos = array($_POST['user'],$_POST['password']);

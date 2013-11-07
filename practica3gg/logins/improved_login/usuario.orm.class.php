@@ -63,7 +63,12 @@ public static function actualizar_usuario($usuario)
     $conexion = new Conexion();
     $conexion->crear_conexion();
     $sql_update = "UPDATE usuario SET (username=?,password=?,email=?,id_rol=?) WHERE id_usuario=?";
-    $campos = array($usuario->$username, $usuario->$password, $usuario->$email, $usuario->$id_rol, $usuario->$id_usuario);
+
+    $campos = array($usuario->getUsername(), 
+                    $usuario->getPassword(), 
+                    $usuario->getEmail(),
+                    $usuario->$id_rol(),
+                    $usuario->$id_usuario);
     $query = $conexion->consulta_row($sql_delete,$campos);
     $conexion->cerrar_conexion();
     return $query;

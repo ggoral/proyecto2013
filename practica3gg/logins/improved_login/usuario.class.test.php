@@ -2,20 +2,20 @@
 require_once "usuario.class.php";
 
 $usuario = new Usuario();
-//$atributos = array($_POST['user'],$_POST['password']);
- 
-$atributos = array("ggoral","gonzalo");
 
-$result = $usuario->obtener_usuario($atributos);
-$cantidad = $usuario->cantidad_resultados($result);
-print_r($result);
+$usuario->setId_usuario(1);
+echo "id_usuario:",$usuario->getId_usuario(),"\n";
 
-$usuarios = $usuario->obtener_todos_los_usuarios();
-$cantidad = $usuario->cantidad_resultados($result);
-print_r($usuarios);
+$usuario->setUsername("Gonzalo");
+echo "username:",$usuario->getUsername(),"\n";
 
-foreach ($usuarios as $usuario){
-  echo $usuario['user']," ";
-  echo $usuario['pass'],"\n";
-}
+$usuario->setPassword("Gonzalo_PASS");
+echo "password:",$usuario->getPassword(),"\n";
+
+$usuario->setEmail("goral.gonzalo@gmail.com");
+echo "email:",$usuario->getEmail(),"\n";
+
+$usuario->setId_rol(0);
+echo "id_rol:",$usuario->getId_rol(),"\n";
+
 ?>

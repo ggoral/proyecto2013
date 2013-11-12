@@ -1,9 +1,9 @@
 <?php
-$tipo_usuario = new Array("admin");
+$tipo_usuario = array("1");
 require_once "access_check.php";
 
 try {
-  if(isset($_SESSION)){
+  if(isset($_SESSION) && sizeof($_SESSION)){
     print_r($_SESSION);
     print_r($_GET);
     print_r($_POST);

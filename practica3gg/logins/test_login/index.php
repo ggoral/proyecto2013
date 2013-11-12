@@ -12,7 +12,6 @@ if (array_key_exists('usuario', $_SESSION)) {
     }
   }
 else {
-    header("Location: index.php?user=anonimous");
+    header("Location: index.php?usuario=anonimous");
   }
-exit;
 ?>

@@ -1,4 +1,5 @@
 <?php
+$tipo_usuario = new Array("admin");
 require_once "access_check.php";
 
 try {

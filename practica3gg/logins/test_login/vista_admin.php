@@ -5,7 +5,6 @@
   </head>
 
   <body>
-    <h1><?php echo $parametro_para_vista ?></h1>
     <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#news">News</a></li>

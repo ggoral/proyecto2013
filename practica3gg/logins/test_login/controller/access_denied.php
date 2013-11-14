@@ -1,3 +1,6 @@
 <?php
-echo "ACCESS DENIED";
+
+echo "ACCESS DENIED\n";
+die();
+
 ?>

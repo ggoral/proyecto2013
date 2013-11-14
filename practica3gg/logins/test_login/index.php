@@ -7,7 +7,7 @@ if (array_key_exists('usuario', $_SESSION)) {
     {
     $HOST = $_SERVER['HTTP_HOST'];
     $URI = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $EXTRA = 'index.html';
+    $EXTRA = 'controller/frontcontroller.php';
     header("Location: http://$HOST$URI/$EXTRA");
     }
   }

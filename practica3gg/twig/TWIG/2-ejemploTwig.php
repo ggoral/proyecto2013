@@ -9,9 +9,8 @@ $twig = new Twig_Environment($loader);
             
 $template = $twig->loadTemplate("plantilla-2.twig");
 
-
 $template->display(array('variable' => "mas variables",
-						'arreglo' => array("EStudiantes de la Plata",2,3),
+						'arreglo' => array("Estudiantes de la Plata",2,3),
 						));
 
 ?>

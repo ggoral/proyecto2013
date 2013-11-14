@@ -1,6 +1,5 @@
 <?php 
 
-
 require_once("Twig/Autoloader.php");
 Twig_Autoloader::register();
 
@@ -12,7 +11,7 @@ $template = $twig->loadTemplate("plantilla-6-hijo.twig");
 
 $template->display(array('titulo' => "Listado de alumnos",
 						'lista' => array("juan", "roberto")
-						));
+));
 
 ?>
 

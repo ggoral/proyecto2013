@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  {% block head %}
+  <link rel="stylesheet" href="stylesheet.css" />
+  <title>{% block title %}{% endblock %} - Proyecto</title>
+  {% endblock %}
+</head>
+<body id="page">
+  <div id="header">{% block header %}{% endblock %}</div>
+  <div id="content">{% block content %}{% endblock %}</div>
+  <div id="footer">
+    {% block footer %}
+      &copy; Copyright 2013 by <a href="http://github/">you</a>.
+    {% endblock %}
+  </div>
+
+</body>
+</html>

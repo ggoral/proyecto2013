@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head> <title>Mi quinto Template con Twig</title> </head>
+<body>
+
+<h1> {{ titulo }}</h1> 
+ 
+{% if lista|length > 0 %}
+	<ul>
+	{% for alu in lista %}
+		<li>{{ alu }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+	<p> Ups!! Parece que no tenemos alumnos....</p>
+{% endif %}
+
+</body>
+</html>
+
+        <table>
+          <tr>
+            <th>id_encuesta</th>
+            <th>tiempo_envio</th>
+            <th>tiempo_analisis</th>
+            <th>tiempo_ingreso</th>
+          </tr>
+          {% for enc in encuestas %}
+            <tr>
+              <td>{{enc['id_encuesta']}}</td>
+              <td>{{enc['tiempo_envio']   }}</td>
+              <td>{{enc['tiempo_analisis']}}</td>
+              <td>{{enc['tiempo_ingreso'] }}</td>
+            </tr>
+        {% endfor %}
+        </table>

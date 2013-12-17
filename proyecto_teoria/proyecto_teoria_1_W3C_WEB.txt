@@ -1,0 +1,88 @@
+W3C : El consorcio de la web
+
+Desarrollo de estándares
+- La misión del W3C es:
+Guiar la Web hacia su máximo potencial a través del desarrollo de protocolos y pautas que aseguren el crecimiento futuro de la Web.
+
+URL/URI -RFC 2396/3986
+Una URI -“Uniform Resource Identifier”- es un mecanismo por el cual se identifica todo recurso accesible en la web. Una URL -“Uniform Resource Locator”- permite ubicar un recurso a través de su ubicación.
+Típicamente una URL se compone de:
+- el esquema o protocolo utilizado para acceder al recurso
+- el nombre de dominio de la máquina que almacena el recurso
+- el nombre del recurso mismo dado como un camino dentro de la máquina (recurso)
+
+URL Encoding
+Las URLs se transmiten en ASCII.
+Algunos caracteres deben convertirse.
+
+Protocolo HTTP
+Algunos tipos de mensajes
+Solicitudes
+GET: retorna la información que está identificada por la URI-solicitada.
+HEAD: retorna la información del header del servidor.
+POST: en general se utiliza para la entrega o envío de formularios que son completados en forma interactiva por un usuario. Esta es la única solicitud que envía un cuerpo en el mensaje.
+Respuestas
+El servidor retorna un código que indica el estado de la solicitud (por ejemplo:200 y el recurso)
+
+Lenguaje HTML - “HyperText Markup Language”-
+especifica el formato de las páginas web, separando el contenido de las páginas de su formato de presentación.
+- Fue creado en los laboratorios CERN por Tim Berners-Lee.
+- Define un conjunto de símbolos (etiquetas o tags) que especifican la estructura lógica de un documento y de todos sus componentes.
+- Es independiente de la plataforma.
+- Su código es interpretado por los clientes web.
+
+El documento tiene una estructura y una forma de visualización Estructura: usando las etiquetas HTML más
+apropiadas.
+
+Visualización: usando hojas de estilo
+
+Web 2.0
+- En2004, por primera vez mencionado por Tim O'Reilly
+- Los usuarios como productores de contenidos
+
+Tecnologias
+- Herramientas típicas: blogs, wikis, redes sociales...
+- CSS+X/HTML
+- Microformatos
+- AJAX
+- RSS
+- Aplicaciones mashup
+- Folcsonomías
+
+¿Qué es la web semántica?
+
+La Web Semántica es una Web extendida, dotada de mayor significado en la que cualquier usuario en Internet podrá encontrar respuestas a sus preguntas de forma más rápida y sencilla gracias a una información mejor definida.
+
+Añadir metadatos, datos sobre datos, semánticos a los documentos Web.
+- Estos metadatos, como contenido, significado y la relación entre los datos deben escribirse siguiendo un formalismo adecuado para que puedan ser procesadas en forma adecuada por las computadoras.
+- De esta forma se mejora la interoperabilidad entre los sistemas y se disminuye la intervención humana.
+
+- RDF (Resource Description Framework): un tipo especial de archivos XML. Proporciona información descriptiva simple sobre los recursos que se encuentran en la Web
+- SPARQL: lenguaje de consulta sobre RDF
+- OWL (Web Ontology Language): mecanismo para desarrollar temas o vocabularios específicos para trabajar sobre los datos obtenidos.
+
+
+Microformatos:
+- Los microformatos son conjuntos de formatos de datos abiertos y simples, desarrollados
+sobre estándares ya existentes, como HTML, CSS y XML.
+- Objetivo: insertar contenido semántico aprovechando los atributos "id" ó "class".
+- Permiten a los agentes de usuario procesar información sencilla entendida por usuarios finales.
+- Existen microformatos predefinidos, como hCard, Geo , hCalendar, entre otros.
+- Mas info visitar: http://microformats.org
+
+HTML lo más semántico posible
+Es muy importante en cuanto a usabilidad, accesibilidad, codificación y posicionamiento en buscadores.
+- Escribir títulos de las páginas representativos.
+- Elementos <meta> dentro de la etiqueta <head> de un documento XHTML ó HTML.
+- Utilizar vínculos relacionales a través de los atributos "rel" de los elementos "a" y "link"
+- Utilizar las características estructurales de los elementos de HTML, h1, h2, blockquote, strong, em, etc
+- Utilizar el tag <p> para indicar los párrafos del contenido y no para dejar espacios en blanco.
+- Utilizar CSS para separar la lógica de la presentación.
+
+Atributo rel de a y link
+Los vínculos definidos por el elemento LINK pueden describir la posición de un documento dentro de una serie de documentos.
+
+
+
+
+

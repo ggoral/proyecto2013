@@ -1,0 +1,56 @@
+JSON - YAML
+
+Recordemos ...
+Intercambio de información entre aplicaciones
+Datos estructurados
+Procesamiento en el cliente
+Procesamiento en el servidor
+
+JSON – JavaScript Object Notation
+Formato alternativo para el envío y recepción de datos. Es un subconjunto de la notación literal de objetos de Javascript.
+Se lo conoce también como LJS
+Es un formato “ligero” de intercambio de datos.
+No requiere el uso de XML
+
+JSON está constituído por dos estructuras:
+- Una colección de pares de nombre/valor
+- Una lista ordenada de valores
+- Un objeto es un conjunto desordenado de pares nombre/valor
+
+Un arreglo delimita los valores entre []
+arreglo [val1, val2, ..]
+donde: val puede ser una cadena de caracteres, o un número, o true o false o null, o un objeto o un arreglo.
+
+A favor de JSON:
+- El analizador semántico de JSON es más sencillo que el de XML.
+- JSON puede ser analizado usando la función eval() de Javascript.
+- No requiere ninguna otra funcionalidad adicional.
+- Fue elegido como formato de datos por algunos motores de BDD como MongoDB
+
+A favor de XML:
+- Aspectos de seguridad a considerar en el uso de eval()
+- La mayoría de los navegadores YA incorporan procesamiento nativo para XML.
+- XML tiene mayor soporte y ofrece muchas más herramientas de desarrollo.
+
+YAML
+“YAML Ain't Markup Language” (”NO es un Lenguaje de Marcado”)
+Es un superconjunto de JSON que trata de superar algunas de las limitaciones de éste.
+Según su sitio web: “es un formato para serializar datos que es fácil de procesar por las máquinas, fácil de leer para las personas y fácil de interactuar con los lenguajes de script”.
+
+Es un formato útil para describir datos que pueden ser transformados en arrays simples y asociativos.
+YAML es un lenguaje de serialización de datos
+XML fue diseñado para soportar documentos estructurados
+
+YAML vs. JSON
+- Ambos son formatos más legibles para el desarrollador
+- El objetivo de JSON es la eficiencia en el procesamiento.
+- El objetivo de YAML es la legibilidad a costa de un procesamiento más complejo.
+- YAML podría ser visto como un superset de JSON: todo archivo JSON es un archivo YAML válido.
+
+Conclusiones
+- Importancia del intercambio de datos en un formato estándar
+- Procesamiento eficiente
+- Legibilidad para el desarrollador
+- Depende del Uso
+- Siguen buscando otros formatos
+

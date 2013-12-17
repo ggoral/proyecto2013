@@ -1,0 +1,30 @@
+Cookies
+- Básicamente, son “tokens” en el requerimiento HTTP que permite identificar de alguna manera al cliente en el servidor.
+- Se almacenan en el disco del cliente.
+- Muy usado por ser HTTP un protocolo sin estado
+- Formato: “nombreCookie=valor;expires=fecha;”
+- Desde Javascript: document.cookie
+- Desde PHP: las considera variables externas
+- La variable $_COOKIE es un arreglo con las cookies generadas 
+- Mediante la función setcookie() es posible grabar cookies en el cliente.
+
+Todo el tratamiento de las cookies debe ser manejado antes de que se envíe cualquier otra información al navegador.
+
+Sesiones
+Es un mecanismo para conservar ciertos datos a lo largo de varios accesos.
+Permite registrar un número arbitrario de variables que se conservarán en las siguientes peticiones.
+
+Identificador: A cada visitante se le asigna un identificador único, llamado "session id" (identificador de
+sesión).
+Hay dos formas de propagar un identificador de sesión:
+- Mediante cookies
+- A través de la URL.
+
+session_start(): Inicializa los datos de una sesión
+session_destroy(): Destruye los datos guardados en una sesión
+session_id(): recupera o modifica el valor de la sesión
+
+Debe ubicarse antes que cualquier salida al browser. Si no existe un “session ID”, session_start() lo crea e inicializa un arreglo vacío denominado $_SESSION.
+
+Los archivos con los datos de la sesión se generan en el servidor, usualmente en el directorio \tmp del servidor.
+

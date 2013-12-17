@@ -1,0 +1,60 @@
+Páginas web
+En el desarrollo de páginas web podemos distinguir básicamente entre:
+Páginas Estaticas
+Paginas Dinamicas
+
+Scripts
+- Los scripts son pequeños programas que se incluyen en la página web.
+- Se delimitan entre las etiquetas <script> y </script>.
+- Si el navegador NO puede ejecutar scripts, existen las etiquetas <noscript> y </noscript>.
+- Al tratarse como cualquier componente más del documento, están en formato ASCII (texto plano).
+
+Javascript
+- Es multiplataforma.
+- Surgió como Livescript (creado por la empresa Netscape) y luego, junto con la empresa Sun, se convirtió en Javascript.
+- El estándar es el ECMA 262.
+- Maneja el concepto de objetos: es un lenguaje basado en prototipos.
+- Es case-sensitive.
+- La sintaxis de Javascript es similar a la del Lenguaje C o Java.
+- V8 (motor JavaScript desarrollado por Google)
+
+Objetos: elementos del navegador y del documento HTML.
+– Propiedades: atributos de los objetos.
+– Métodos: acciones (operaciones) que se pueden realizar con los objetos.
+- Funciones: funciones (rutinas) de propósitos especial.
+- Sentencias: instrucciones.
+- Eventos: acciones del usuario que pueden provocar una respuesta.
+
+Paradigma “basado en objetos” (no en clases) ...
+– Cada objeto tiene asociado propiedades y métodos.
+- ¿Cómo se referencian? Mediante 
+calificación:
+– objeto.propiedad
+– objeto.método
+La herencia se realiza a través de prototipos.
+- Las propiedades y los métodos pueden agregarse al objeto en forma dinámica.
+
+Variables
+- Permanecen en memoria mientras el documento que las contiene permanece cargado. Cuando éste es “descargado”, las variables son eliminadas y cuando es actualizado (“reload”), las variables que contiene se vuelven a inicializar.
+- Tipos de valores predefinidos: Números (enteros o reales), lógicos, cadenas de caracteres, null y undefined.
+- Las variables no tienen tipo ni necesitan declararse.
+- Javascript es un lenguaje de asignación dinámica de tipos.
+- Todas las variables son globales, a menos que se declaren con la sentencia “var” (esto las hace locales a una función)
+
+Javascript provee un conjunto de funciones predefinidas.
+Las más utilizadas son:
+- eval(unaCadena): ejecuta la expresión o sentencia contenida en unaCadena.
+- parseInt(unaCadena, base): convierte unaCadena al valor numérico asociado usando como base el parámetro base. 
+- parseFloat(unaCadena): convierte una Cadena en un número real.
+- isNaN(unaCadena): retorna true si una Cadena No es un Número.
+
+Arreglos
+Los arreglos en Javascript son heterogéneos y dinámicos.
+
+¿Cómo se ejecuta cuando es externo? depende de los atributos:
+- Sí async="async": El script se ejecuta asincronicamente mientras se parsea el resto de la página. Es nuevo de HTML5.
+- Sí no esta async y está defer="defer" se ejecutará una vez que haya terminado de parsear el resto de la página
+- Sí no está ninguno de los dos se carga y ejecuta inmediatamente y luego continua el parseo de la página
+
+
+

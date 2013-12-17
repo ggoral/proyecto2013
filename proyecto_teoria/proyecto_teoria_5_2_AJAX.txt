@@ -1,0 +1,57 @@
+AJAX : Asynchronous Javascript + XML
+
+Asynchronous JavaScript + XML
+- NO es una tecnología, sino una combinación de varias tecnologías.
+- AJAX incluye:
+Presentación basada en estándares usando XHTML y CSS;
+Exhibición e interacción dinámicas usando DOM;
+Intercambio y manipulación de datos usando XML y XSLT;
+Recuperación de datos asincrónica usando XMLHttpRequest;
+JavaScript como lenguaje de programación.
+
+Asynchronous JavaScript + XML
+Comenzó a ser popular a partir del año 2005, con Google Suggest.
+El objetivo es crear interfaces de usuario más amigables, similares a las de las PCs de escritorio, sin afectar los tiempos y el esquema de navegación.
+
+El Objeto XMLHttpRequest
+- Es un objeto que permite realizar requerimientos HTTP al servidor web desde cualquier lenguaje de script client-side SIN recargar la página.
+
+Aún NO es estándar W3C
+
+El Objeto XMLHttpRequest
+Algunas propiedades...
+- onreadystatechange: manejador de evento para un cambio de estado.
+- readyState: el estado del objeto:
+0 = uninitialized
+1 = loading
+2 = loaded
+3 = interactive
+4 = complete
+
+Algunas propiedades (Cont.)...
+- responseText: retorna la respuesta como texto.
+- responseXML: retorna la respuesta como XML que puede ser manipulado usando DOM.
+- open("method", "URL", async, "uname", "pswd"): 
+Especifica el método, URL y otros atributos opcionales del requerimiento: 
+El método puede ser "GET", "POST", o "PUT" 
+La URL puede ser una URL completa o relativa
+El parámetro async especifica si el requerimiento debe ser manejado en forma asincrónica o no (true o false)
+
+Cuestiones de Usabilidad:
+- Feedback: Es conveniente replantear el modelo de respuesta de la pantalla para que el usuario
+perciba que el sistema le está atendiendo.
+- El uso del botón “Atrás” del navegador: En aplicaciones basadas en Javascript existe un
+riesgo de mal funcionamiento, ya que el botón “Atrás” funciona para peticiones de páginas diferentes
+- Tiempo de espera en la carga de páginas: páginas con demasiado contenido (código Javascript)
+- Acceso a información mediante indexación y marcado de favoritos (Bookmarks)
+
+
+
+
+
+
+
+
+
+
+

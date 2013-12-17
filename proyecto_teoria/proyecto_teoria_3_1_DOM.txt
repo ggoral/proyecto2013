@@ -1,0 +1,99 @@
+DOM: El Modelo de Objetos del Documento
+
+- El Modelo de Objetos de Documento es una API, que permite acceder a los contenidos de un documento HTML/XML.
+- Proporciona una representación estructurada, orientada a objetos, de los elementos individuales y el contenido del documento, con métodos para recuperar y fijar las propiedades de dichos objetos.
+- Proporciona métodos para agregar y eliminar objetos al documento.
+- También proporciona una interfaz estándar para trabajar con eventos.
+
+- El documento se ve como un árbol de nodos.
+- Cada nodo tiene sus propios métodos y propiedades, pero todos implementan la interfaz Node: Un conjunto común de métodos y propiedades relacionadas con la estructura de árbol del documento.
+
+También proporciona varias propiedades que reflejan la estructura de árbol y permiten recorrerlo.
+
+En un documento HTML/XHTML:
+- El documento entero es un nodo documento.
+- Cada elemento HTML es un nodo elemento.
+- Los textos que aparecen en las páginas son nodos de texto.
+- Los atributos de los elemento son nodos atributos.
+- Los comentarios son nodos comentarios.
+
+Interfaz Node:
+Posee propiedades tales como: nodeName, nodeValue y attributes.
+Los valores de estos atributos varían según el tipo de nodo.
+
+Interfaz NodeList:
+Listas ordenadas de nodos.
+Método item(i): devuelve el i-ésimo nodo
+Atributo length: el número de nodos de la lista.
+Interfaz NamedNodeMap: conjuntos de nodos a los que se puede acceder por su nombre.
+Atributo length: la cantidad de nodos.
+
+DOM - Document
+El objeto document tiene sólo un elemento hijo, dado por document.documentElement
+- document.documentElement corresponde al elemento <html> y tiene dos hijos: <head> y <body>
+
+Accediendo a los nodos
+Todos los elementos del documento tienen un atributo que les permite identificarlos unívocamente: ID
+Utilizando este atributo, luego accederlo vía el document.getElementById()
+
+Tipos de Nodos
+- Nodos Elementos: Corresponden a las etiquetas del documento. Pueden tener nodos hijos, que pueden ser otros elementos o nodos de texto.
+- Nodos de Texto: Representan contenido, o simplemente caracteres. Tienen un nodo padre y, posiblemente, nodos del mismo nivel, pero no pueden tener nodos hijos.
+- Nodos atributos: No están considerados una parte del árbol del documento. No tienen un nodo padre, ni hijos ni hermanos.
+- Nodos atributos vs. atributos
+
+Nodos de texto
+Los nodos de texto no tienen un atributo ID. No se pueden acceder mediante los métodos getElementById() o getElementsByTagName(). Se acceden a través de su nodo padre.
+
+
+Modelo de Eventos
+Objetivos
+- Diseñar un sistema de eventos genérico que permita registrar manejadores de eventos, describir el flujo de eventos a través de la estructura del árbol y proveer información contextual sobre cada evento.
+- Proveer un subconjunto común de los sistema de eventos actuales.
+
+Consiste en dos secciones
+- Propagación y registro de eventos
+- La Interfaz Event
+
+Tipos de Eventos
+El modelo de eventos no intenta definir TODOS los posibles tipos de eventos.
+Permite la implementación de múltiples módulos de eventos agregando los que sean necesarios.
+Por cuestiones de interoperabilidad, se definieron:
+» Un módulo de eventos correspondiente a la interfaz de usuario
+» Un módulo de eventos lógicos
+» Un módulo de eventos de cambio de estructura del documento
+
+El modelo de eventos
+El Modelo de Eventos proporciona métodos para capturar eventos y define una Interfaz
+Event que contiene información específica sobre un evento.
+Algunas propiedades de Event:
+» target: El nodo que ha originado elevento.
+» currentTarget: El nodo al que el manejador está asignado.
+» type: el tipo de evento
+
+La interfaz Event
+Proporciona propiedades que describen el evento y su estado actual.
+
+Algunas propiedades...
+bubbles: si el evento burbujea o no.
+cancelable: si el evento puede o no cancelarse.
+target:El nodo que ha originado el evento.
+type: tipo de evento (click, mouseover, etc)
+
+Flujo de eventos
+Como los documentos HTML/XML son de naturaleza jerárquica, cuando un evento ocurre en un objeto en particular, dicho evento está ocurriendo en cualquier objeto(s) que contenga(n) a dicho objeto.
+
+1.capture phase: El evento es enviado desde la raíz hasta el padre del nodo objetivo
+2.target phase: El evento es enviado al nodo objetivo 
+3.bubbling phase:El evento es enviado desde el objetivo a la raíz
+
+Listener: “Escuchadores” de eventos
+- Los objetos DOM también pueden ser registrados como escuchadores de eventos.
+- Esta característica puede ser utilizada para asignar múltiples manejadores para un evento dado.
+- Los métodos básicos son: addEventListener, removeEventListener.
+
+
+
+
+
+

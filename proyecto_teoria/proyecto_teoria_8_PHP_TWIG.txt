@@ -1,0 +1,52 @@
+PHP : Programando con Templates - Alternativas para el View
+
+El uso de templates o plantillas permite separar la aplicación de la presentación.
+No asegura MVC. Esa es NUESTRA responsabilidad Algunas opciones
+
+Twig
+Es un motor de templates en PHP promocionado como un motor de plantilla flexible, rápido, y seguro.
+Desarrollado y distribuido bajo licencia BSD.
+Documentación bajo licencia Creative Commons.
+¿Por qué lo elegimos en la cátedra?
+Porque es la alternativa que apoya Fabien Potencier, el creador del framework Symfony.
+Y es una de las opciones a usar en Symfony 2 .
+
+PEAR - PHP Extension and Application Repository
+Es un repositorio de código y extensiones para PHP
+- El objetivo principal de PEAR es:
+- Proveer un mecanismo consistente para que todas las librerías pueden respetar un mismo estilo
+- Da una infraestructura a la comunidad PHP para poder compartir código
+- Define estándares para ayudar a los desarrolladores escribir código portable y reusable
+- Provee herramientas para mantener y distribuir código
+
+Templates en PHP
+Las librerías que permiten trabajar con templates definen una serie de clases a importar en nuestros scripts.
+
+Templates con Twig
+Los templates se utilizan para definir la vista.
+Tienen un formato especial.
+No utiliza una extensión en particular (podría ser html, xml, twig, tpl, etc.).
+Son procesados por el sistema de plantillas.
+Contienen variables o expresiones que son reemplazadas cuando se procesa el template y tags que proveen la lógica de la presentación.
+
+Formato de los templates
+- Todas las etiquetas del template se encierran entre dos tipos de delimitadores
+- Todo el contenido fuera de los delimitadores se muestra como contenido estático.
+- Se pueden incluir comentarios: {# ... #}
+- Se pueden incluir otros templates {% include 'sidebar.html' %}
+- Twig define una mecanismo de herencia de templates.
+Permite definir un template base que contiene los elementos comunes y luego definir los bloques que los “templates hijos” redefinirán.
+
+- Algunas opciones en el momento de crear el ambiente para cargar los templates:
+- cache: se evita volver a parsear los templates.
+
+- Twig puede levantar las siguientes excepciones:
+- Twig_Error: La excepción base para todos los errores.
+- Twig_Error_Syntax: Cuando hay algún problema con la sintaxis del template.
+- Twig_Error_Runtime: Cuando hay un error en tiempo de ejecución (por ejemplo, cuando se utiliza un filtro que no existe para una instancia dada).
+- Twig_Error_Loader: Se produce un error durante la carga del template
+
+Para introducir Twig archivos de que parte/s del modelo tuvimos que cambiar
+- VIEW: la foma en que se escribe para mostrar los resultados cambia a la sintaxis de Twig. Archivos views/*.noimporta
+- CONTROLLER: para invocar al View previamente cargando las dependencias de Twig. Agregado controller/usuarios_con_Twig.php. ¿Por qué sigue en PHP?
+

@@ -1,0 +1,85 @@
+PHP : Programación Orientada a Objetos
+
+POO en PHP
+- PHP tiene soporte para construir clases.
+- Es posible definir clases en una jerarquía con herencia simple.
+- El constructor es class
+
+¿Cómo se crean instancias de una clase? Operador new. $x = new nombreDeLaClase;
+
+Control de accesos: visibilidad de las propiedades (Público - Privado - Protegido)
+
+(::) Operador de resolución de Alcance (“Paamayim Nekudotayim”): Permite referenciar a las propiedades o métodos
+estáticos y constantes fuera de la la clase.
+
+Constructores: En PHP 5 estas funciones se llaman __construct(). Aunque por compatibilidad con versiones anteriores, si no se encuentra esta función se busca una cuyo nombre sea igual al de la clase. El constructor de un objeto NO invoca automáticamente al constructor de la clase base.
+
+Destructores: Cuando se destruye la última referencia a un objeto, se invoca el método “destructor” de ese  objeto. Este método se llama __destruct() y no recibe parámetros. Al igual que en el caso de los constructores, los métodos destructores de un objeto NO invocan automáticamente los destructores de las clase base.
+
+Miembros static: Una propiedad declarada como static no puede ser accedida con un objeto de la clase. Sí a través de métodos estáticos.
+
+Métodos abstractos
+- Un método es abstracto si sólo declara el prototipo del método y no su implementación.
+Clases Abstractas
+- No tienen instancias.
+- Es cualquier clase que contenga aunque sea un método abstracto.
+
+Interfaces
+- Son estructuras similares a las clases abstractas.
+- Pueden contener sólo métodos abstractos.
+- Suelen verse como catálogos de métodos a implementar.
+
+- Una clase puede implementar una o más interfaces.
+- Debe proveer una implementación para todos los métodos definidos en la interface.
+
+Polimorfismo
+Distintos objetos comparten la misma interfaz y en ejecución se determina el código a ejecutar, dependiendo del contexto. No importa cómo lo implementa cada uno.
+
+Excepciones en PHP 
+- Existe una clase Exception, es posible levantar una excepción explícitamente:
+-- throw new Exception( "my message", 44 );
+-- Finaliza la ejecución del método y deja disponible el objeto Exception
+-- Por defecto produce un error fatal
+- Para manejar las excepciones implementa un mecanismo try/catch
+-- Cualquier código que pueda levantar una excepción debe estar encerrado dentro de una cláusula try
+-- El bloque catch se utiliza para manejar la excepción
+
+Acceso a BBDD
+Tipos de recursos: Hay dos tipos de recursos usados en el módulo MySQL.
+- El identificador de enlace para una conexión de base de datos
+- Un recurso que almacena el resultado de una consulta.
+
+Algunas funciones....
+- mysql_connect(): Conecta a una base de datos
+- mysql_select_db: Permite seleccionar una base de datos
+- mysql_query(): Envía una sentencia SQL a MySQL
+- mysql_fetch_row(): Busca un registro en el resultado de una consulta
+- mysql_result(): Devuelve los resultados de una consulta
+
+En PHP 5, el soporte para MySQL no se encuentra habilitado por defecto.
+La extensión mysqli permite acceder a la funcionalidad provista por MySQL 4.1.2 o superior.
+
+La extensión Objetos de Datos de PHP (PDO por sus siglás en inglés) define un interfaz ligera para poder
+acceder a bases de datos en PHP.
+Hay que usar un controlador de PDO específico para cada servidor de base de datos.
+PDO proporciona una capa de abstracción de acceso a datos, lo que significa que, independientemente de la base de datos que se esté utilizando, se usan las mismas funciones para realizar consultas y obtener datos → Permitiría cambiar de motor de base de datos.
+
+Comparando
+A mayor abstracción menos control. Al abstraernos es posible que se compliquen algunas funciones propias del  motor que queremos usar.
+¿La abstracción es necesaria? Menos control con PDO que con mysqli. Algunas bases no están disponibles con PDO y hay que usar si o si el driver específico.
+
+ORM - Object-Relational Mapping
+Mapeo de Objetos Relacionales. a Base de Datos
+- Permite acceder a una base de datos relacional como si fuera orientada a objetos.
+- Transforma las llamadas a los objetos en consultas SQL, que permiten independizar el motor de BD utilizado en la aplicación.
+- De acuerdo a la implementación se utiliza una sintaxis diferente.
+
+ORM - ¿Por qué?
+BBDD relacionales
+Datos escalares: números, cadenas de texto,etc...
+Aplicaciones orientadas a objetos, con propiedades y métodos
+
+¿Problema?
+Convertir los objetos en datos escalares para grabar los datos en la Base de Datos y volver a convertirlos en objetos al recuperarlos.
+
+

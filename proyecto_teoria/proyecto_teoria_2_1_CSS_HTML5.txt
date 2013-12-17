@@ -1,0 +1,56 @@
+CSS
+ Documento HTML
+– Estructura
+- HTML
+– Presentación
+- Hojas de Estilo
+
+Una regla de estilo tiene dos partes:
+Un selector, que identifica el elemento o grupo al que el estilo se aplicará.
+Una declaración de propiedades a ser aplicadas al selector.
+
+- Para reducir el tamaño de las hojas de estilo, es posible agrupar los selectores en una lista separada
+por comas: h1, h2, h3 { font-family: Arial}
+
+- Comentarios entre /* */
+
+- Los estilos se “heredan”. Las propiedades definidas para un elemento se trasladan a los elementos que éste “encierra”.
+
+Seudoclases: Son agregadas por el browser, y referidas como "clases" por las reglas de estilo.
+Permiten diferenciar diferentes usos para un mismo elemento.
+
+-Seudoelementos: Permiten referirse a porciones de los elementos reales.
+
+Algunos elementos en línea definidos por HTML: a, img, input, select, span, textarea.
+Algunos elementos de bloque definidos por HTML: blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, table, ul. 
+Los siguientes elementos también se considera que son de bloque: dd, dt, li, tbody, td, tfoot, th, thead, tr.
+Los siguientes elementos pueden ser en línea y de bloque según las circunstancias: button, iframe, map, object, script.
+
+Todos los elementos de un doc HTML se representan mediante cajas rectangulares.
+Cajas creadas por los elementos de línea y los elementos de bloque
+
+Esquemas de posicionamiento
+
+Posicionamiento flotante: En el modelo flotante, una caja se presenta primero de acuerdo al flujo normal, luego se saca del flujo normal y se mueve a la izquierda o derecha tanto como sea posible. El contenido puede fluir a lo largo del costado del flotante
+
+Posicionamiento absoluto: En el modelo de posicionamiento absoluto, una caja es quitada completamente del flujo normal (no tiene ningún impacto sobre los hermanos siguientes) y se le asigna una posición con respecto al bloque de contención.
+
+Propiedades position y float: determinan el algoritmo de posicionamiento usado para calcular la posición de la caja.
+
+Estilos
+Define también otras propiedades de visualización que las verán en la práctica: fuentes, colores, cursor, etc.
+También especifican cómo presentar el documento en diferentes medios: en la pantalla, en el papel, con un sintetizador de voz, con un dispositivo braille, etc. 
+
+HTML5
+Los documentos deben comenzar con la especificación del Document Type <!DOCTYPE html>
+- Algunos elementos presentacionales no se incluyen, por pasar a ser manejados por CSS, como center, big, font.
+- API para Localización Geográfica: para determinar la ubicación geográfica del usuario.
+
+Algunos elementos estructurales:
+- <article>: Contenido externo
+- <details>: Detalles del doc o de partes del doc
+- <header> y <footer>: Encabezado y pie de página.
+- <nav>: Sección de navegación
+- <section>: Define secciones del doc.
+
+

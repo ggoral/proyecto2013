@@ -1,0 +1,27 @@
+Injection
+Una SQL Injection suele ocurrir cuando se arma en forma descuidada una consulta a la base de datos a partir de los datos ingresados por el usuario. 
+Dentro de estos parámetros pueden venir el código malicioso.
+
+Prepared Statement
+Pueden definirse como un tipo de plantillas compiladas para SQL que las aplicaciones quieren ejecutar, pueden ser personalizadas usando parámetros de variables.
+Ventajas:
+
+- PERFORMANCE: La consulta sólo necesita ser analizada (o preparada) una vez, pero puede ser ejecutada múltiples veces con los mismos o diferentes parámetros. Usándolas una sentencia preparada, la aplicación evita repetir el ciclo de análisis/compilación/ optimización. Esto significa que las sentencias preparadas usan menos
+recursos y se ejecutan más rápidamente.
+- SEGURIDAD: Los parámetros para las sentencias preparadas no necesitan estar entrecomillados; el controlador automáticamente se encarga de esto. Si una aplicación usa exclusivamente sentencias preparadas, el  desarrollador puede estarseguro de que no ocurrirán inyecciones SQL.
+
+MVC
+Model - View - Controller
+
+Tres componentes: Modelo - Vista - Control
+
+El principio más importante de la arquitectura MVC es la separación del código del programa en tres capas,
+dependiendo de su naturaleza. La lógica relacionada con los datos se incluye en el modelo, el código de la
+presentación en la vista y la lógica de la aplicación en el controlador.
+
+Reduce la complejidad, facilita la reutilización y acelera el proceso de comunicación entre capas.
+
+Variaciones del MVC original
+- MVC en symfony
+- Model View Presenter
+- Model View Adapter

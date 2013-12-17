@@ -1,0 +1,30 @@
+Librerías Client-Side
+
+JQuery, DOJO, Prototype.
+
+Elementos comunes en las aplicaciones que deben ser implementados (Ejemplo: calendarios)
+- AJAX → Más adelante
+- UI más amigables pero requieren implementación de las componentes.
+
+Librerías Client-Side
+- Contienen soluciones ya implementadas para un dominio de aplicación, que el programador sólo debe usarlas.
+- En la mayoría de los casos, escritas en lenguaje Javascript.
+- El objetivo es simplificar el desarrollo.
+- La mayoría, open source.
+
+Librerías Client-Side
+-Se deben incluir el o los archivos con la librería.
+-Presentan una sintaxis particular para manipular los objetos.
+-Presentan alternativas al uso de DOM (aunque en su implementación la mayoría de ellas se basan en ese estándar). De esta manera, se independizan del navegador. 
+-Se basan en estándares de la W3C.
+-Se distribuyen bajo licencias libres.
+
+JQuery
+- Desarrollado para facilitar el desarrollo de aplicaciones web
+- Con funcionalidad para interactuar con el objeto XMLHttpRequest propio de AJAX.
+- Compatible con la mayoría de los navegadores más usados
+- Versión JQuery Mobile
+
+JQuery: Eventos
+Función ready(): Nos asegura que el árbol DOM se cargue por completo.
+

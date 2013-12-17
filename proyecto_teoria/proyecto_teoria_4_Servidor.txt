@@ -1,0 +1,63 @@
+Páginas web
+En el desarrollo de páginas web
+- Páginas estáticas
+- Páginas dinámicas
+
+alternativas:
+- CGI –“Comon Gateway Interface”-
+- FAST- CGI
+- APIs Nativas
+- NSAPI/ISAPI
+- Módulos Apache
+- Lenguajes de Script
+
+CGI – RFC 3875
+El programa recibe sus datos de la entrada estándar (stdin) a través del CGI
+
+Ventajas: 
+- Simple, se puede usar cualquier lenguaje
+Desventajas:
+- Sobrecarga en la creación de procesos
+- Problemas de seguridad y portabilidad
+
+Interfaces Nativas
+- Surgen para solucionar el problema de performance de los CGI.
+- Se extiende la funcionalidad del servidor web mediante SAPIs (Server Application Programming Interface)
+
+NSAPI: “Netscape Server Application Programming Interface”
+ISAPI: “Microsoft Internet Information Server API”
+Módulos Apache
+Ventajas:Mayor performance
+Desventajas: Dependientes del servidor
+
+Soluciones LAMP/WAMP Tecnologías LAMP
+- sistema operativo Linux
+- servidor web Apache
+- motor de bases de datos MySQL
+- lenguajes de programación Perl, PHP, o Python
+
+PHP Hypertext Pre-Procesor
+
+Características
+- PHP es un lenguaje de scripting de propósito general que tiene una gran comunidad de usuarios.
+- Se utiliza especialmente para aplicaciones Webs
+- Es interpretado
+- Es open source distribuido bajo una licencia libre similar a la de BSD, la PHP License v3.01
+
+Características
+- Cuando se lo ejecuta para aplicaciones webs se ejecuta en el servidor. Es server-side.
+- Los scripts están embebidos en el código HTML.
+- Permite construir páginas dinámicas según la solicitud del cliente y según la información disponible en el servidor.
+- Se puede correr con la mayoría de los servidores web conocidos.
+- Es independiente de la plataforma donde corre.
+- Tiene un soporte muy amplio para base de datos.
+- Provee soporte para programación orientada a objetos.
+- Puede trabajar en forma de CGI o como módulo del servidor Web.
+- Las páginas suelen tener una extensión php o php5, phtml.
+- Hay varias formas de escribir un script php: <?php ....?>
+
+
+
+
+
+

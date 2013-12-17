@@ -1,0 +1,129 @@
+XML : eXtensible Markup Language
+
+eXtensible Markup Language
+¿Qué es?
+- Lenguaje de marcas
+- eXtensible Markup Language
+¿Cómo surge? 
+- De SGML – “Standarized General Markup Language”
+¿Por qué? HTML sólo para presentar información en un navegador
+- HTML NO describe los datos
+- SGML muy complicado - demasiado completo
+
+eXtensible Markup Language
+Metalenguaje
+Lenguaje de marcas
+Describe semántica
+Separa definición de datos de su visualización / utilización
+
+Elementos
+- Vacíos
+- No vacíos
+- Ejemplos
+- <etiqueta – Elemento Vacío />
+- <etiqueta>....</etiqueta>
+- Existe sensibilidad a mayúsculas y minúsculas
+- <etiqueta>,<Etiqueta>, <ETIQUETA>, etc.
+- DEBE tener UNA UNICA raíz.
+
+Atributos
+-Asociados a la etiqueta de apertura
+-Pares nombreAtributo=”valorAtributo”
+-SIEMPRE entre “”
+
+<?xml version=”1.0”?>
+<ficha>
+  <nombre>Roland Garros</nombre>
+  <lugar>Paris</lugar>
+  <estadioPrincipal archivoFuente=”estadio.jpeg”/>
+</ficha>
+
+Espacios de Nombres
+Se resuelve utilizando prefijo
+Se utiliza el atributo xmlns:
+- Son opcionales
+
+¿Cuándo usar?
+Si se tiene que compartir con OTRO documento que pueda contener elementos con los mismos nombres
+Se utilizan para identificar tipos de datos o elementos asociados a otras tecnologías XML
+Ejemplo: <xsl:if test(..).....>
+
+DTD – Document Type Definition
+-Describe la “gramática” del documento
+-Define los elementos del documento XML
+- Qué elementos
+- Qué atributos
+
+Elementos vs. Atributos
+
+Los atributos NO pueden contener valores múltiples.
+Los atributos no son fácilmente extensibles.
+Los atributos no pueden describir estructuras.
+Los atributos son más difíciles de manipular (en prog.).
+Los valores de los atributos son más difíciles de validar contra DTD.
+Más elementos generan más niveles de anidamientos
+
+¿Cómo se asocia un DTD a un documento XML?
+<!DOCTYPE elementoRaiz SYSTEM “http://servidor/DTD/archi.dtd”
+Incluir la definición dentro del documento:
+<!DOCTYPE elementoRaiz [
+  declaraciones
+]>
+
+eXtensible Markup Language
+Existen dos tipos de documentos
+- Documentos bien formados: Respetan la sintaxis básica
+- Documentos válidos: Respetan un DTD
+
+Schemas
+- Permiten definir la estructura de un documento XML
+- A diferencia de los DTD, utiliza sintaxis XML.
+
+Schemas vs. DTDs
+Los schemas son documentos XML: se pueden procesar como cualquier otro documento XML.
+Los schemas soportan tipos de datos: se pueden definir elementos enteros, de punto flotante, fechas, strings, etc.
+Los schemas son extensibles: se pueden crear nuevos tipos de datos, por ejemplo. 
+Los schemas tienen más poder de expresión: se puede especificar, por ejemplo, que cierto valor no tenga más de 2 caracteres.
+
+RSS
+Es un formato de datos utilizado para difundir contenidos desde un sitio web.
+Estándar basado en XML “Really Simple Syndication” o varios acrónimos más...
+Creado en 1999 por Netscape 
+Especificación: http://www.rssboard.org/rss-specification
+
+RSS - Estructura
+- Etiquetas obligatorias de cada “item” 
+-- title:Título del artículo
+-- link:URL
+-- description: resumen del artículo
+
+- Etiquetas optativas de cada “item”
+-- category
+-- guid: id. único
+-- pubDate:fecha de publicación
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

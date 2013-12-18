@@ -14,8 +14,7 @@ Sesiones
 Es un mecanismo para conservar ciertos datos a lo largo de varios accesos.
 Permite registrar un número arbitrario de variables que se conservarán en las siguientes peticiones.
 
-Identificador: A cada visitante se le asigna un identificador único, llamado "session id" (identificador de
-sesión).
+Identificador: A cada visitante se le asigna un identificador único, llamado "session id" (identificador de sesión).
 Hay dos formas de propagar un identificador de sesión:
 - Mediante cookies
 - A través de la URL.

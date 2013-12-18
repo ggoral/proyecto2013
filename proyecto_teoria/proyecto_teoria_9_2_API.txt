@@ -1,0 +1,34 @@
+API : Programando con API
+
+¿Qué es una API?
+Interfaz de programación de aplicaciones (IPA) o API (del inglés Application Programming Interface) es el conjunto de funciones y procedimientos que ofrece cierta biblioteca para ser utilizado por otro software como una capa de abstracción. Ej: librerías del sistema operativo
+
+¿Qué nos permiten las API?
+En general:
+Intercambiar datos con un tercero.
+Aprovechar el software de terceros para utilizarlo en nuestro sistema pero sin necesariamente incluirlo en nuestro desarrollo sino sólo invocándolo. Los cambios en lo que está en la capa de atrás de la API no nos afectan. Por ej. si la API define una función listarDatos, desde nuestro desarrollo no nos afecta que la implementación de esa función cambie de usar un while a un for siempre que devuelva lo que esperamos.
+
+Veremos hoy
+Existen numerosas APIs disponibles que podemos utilizar desde nuestras aplicaciones.
+Nosotros vamos a usar: 
+- API que nos permite interactuar con Linked¡n 
+- API de Google Maps
+
+¿Qué es Linkedin?
+Es una red social de contactos profesionales donde cada usuario sube sus datos laborales para ponerse en contacto con otros profesionales. 
+Lugar de búsqueda de recursos para empleadores http://ar.linkedin.com/
+
+- Mediante Plugins
+- Mediante la API pero a través de PHP
+- Mediante la API en Javascript
+
+Plugins de Linkedin
+Sirven por ejemplo para:
+Distribución del contenido generado por el usuario utilizando las redes que nuestros visitantes tienen en
+Linkedin.
+Incluir perfiles públicos de Linkedin en nuestros sitios web.
+
+¿Recuerdan PECL? PHP Extension Community Library
+Sistema de distribución similar PEAR pero de componentes que extienden PHP desarrollados en C. Hay que bajar y compilar
+
+

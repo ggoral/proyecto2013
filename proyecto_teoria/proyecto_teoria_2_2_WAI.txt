@@ -25,11 +25,14 @@ PRINCIPIOS:
 - Perceptible: La información y los componentes de la interfaz de usuario deben presentarse a los usuarios de la manera en que puedan percibirlos. 
 -- Títulos y alternativas de texto para los contenidos no textuales, contenidos adaptables, contrastes
 suficientes, etc.
+
 - Operable: Los componentes de la interfaz de usuario y la navegación deben ser operables.
 -- Asegurar que la funcionalidad del teclado sea accesible, dar suficiente tiempo para leer y usar los
 contenidos, ayudas en la navegación y en la búsqueda de contenidos, etc.
+
 - Comprensible: La información y el manejo de la interfaz de usuario deben ser comprensibles.
 -- Textos legibles y comprensibles, contenidos que aparezcan y operen en formas predecibles, ayudas a los usuarios a evitar y corregir los errores, etc.
+
 - Robusto: El contenido debe ser suficientemente robusto para funcionar con las tecnologías actuales y las del futuro.
 -- El contenido debe ser lo suficientemente robusto como para confiarse en su interpretación por parte de una amplia variedad de agentes de usuario, incluidas las tecnologías asociadas.
 

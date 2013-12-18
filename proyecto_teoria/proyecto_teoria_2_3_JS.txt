@@ -19,18 +19,18 @@ Javascript
 - V8 (motor JavaScript desarrollado por Google)
 
 Objetos: elementos del navegador y del documento HTML.
-– Propiedades: atributos de los objetos.
-– Métodos: acciones (operaciones) que se pueden realizar con los objetos.
+- Propiedades: atributos de los objetos.
+- Métodos: acciones (operaciones) que se pueden realizar con los objetos.
 - Funciones: funciones (rutinas) de propósitos especial.
 - Sentencias: instrucciones.
 - Eventos: acciones del usuario que pueden provocar una respuesta.
 
 Paradigma “basado en objetos” (no en clases) ...
-– Cada objeto tiene asociado propiedades y métodos.
-- ¿Cómo se referencian? Mediante 
-calificación:
-– objeto.propiedad
-– objeto.método
+- Cada objeto tiene asociado propiedades y métodos.
+- ¿Cómo se referencian? Mediante calificación:
+-- objeto.propiedad
+-- objeto.método
+
 La herencia se realiza a través de prototipos.
 - Las propiedades y los métodos pueden agregarse al objeto en forma dinámica.
 

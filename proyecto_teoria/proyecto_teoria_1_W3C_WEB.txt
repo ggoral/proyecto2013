@@ -5,7 +5,8 @@ Desarrollo de estándares
 Guiar la Web hacia su máximo potencial a través del desarrollo de protocolos y pautas que aseguren el crecimiento futuro de la Web.
 
 URL/URI -RFC 2396/3986
-Una URI -“Uniform Resource Identifier”- es un mecanismo por el cual se identifica todo recurso accesible en la web. Una URL -“Uniform Resource Locator”- permite ubicar un recurso a través de su ubicación.
+Una URI -“Uniform Resource Identifier”- es un mecanismo por el cual se identifica todo recurso accesible en la web. 
+Una URL -“Uniform Resource Locator”- permite ubicar un recurso a través de su ubicación.
 Típicamente una URL se compone de:
 - el esquema o protocolo utilizado para acceder al recurso
 - el nombre de dominio de la máquina que almacena el recurso
@@ -37,7 +38,7 @@ apropiadas.
 Visualización: usando hojas de estilo
 
 Web 2.0
-- En2004, por primera vez mencionado por Tim O'Reilly
+- En 2004, por primera vez mencionado por Tim O'Reilly
 - Los usuarios como productores de contenidos
 
 Tecnologias

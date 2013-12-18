@@ -1,0 +1,65 @@
+Identificación, Autenticación y Autorización
+Aspectos básicos
+
+Conceptos
+- Identificación: es una secuencia de caracteres que identifica unívocamente al usuario: nombre de
+usuario.
+- Autenticación: es la verificación que realiza el sistema sobre la identificación. Se puede realizar a través de: 
+-- Algo que se conoce: clave de acceso
+-- Algo que se posee: tokens / tarjeta
+-- Algo que se es: huella digital, iris, retina, voz
+- Autorización: son los permisos asociados al usuario autenticado.
+
+¿Cómo lo controlamos?
+En el trabajo de la cátedra:
+Identificador: Id de usuario
+¿Con qué nos autenticamos?: Clave
+¿Quién nos autentica?: La aplicación PHP
+¿Quién nos autoriza?: La misma aplicación PHP
+¿Qué autorización podemos tener?: Administrador, socio, cliente
+
+Escenario
+1- Usuario introduce identificador y contraseña en el browser.
+2- Aplicación PHP valida e inicia sesión o no.
+3- Devuelve al usuario la vista correspondiente a la autorización correspondiente.
+
+Limitaciones del Escenario
+Varios sistemas:
+Múltiples pares usuario/contraseña, uno por cada sistema.
+Se dificulta la interacción entre los sistemas, no hay confianza.
+En cada sistema nuevo se debe redesarrollar la autenticación y todo lo relacionado, por ejemplo: recuperación de contraseña.
+
+OpenID
+Consiste básicamente en que el usuario selecciona un servidor externo (el “proveedor” de OpenID) que va a ser el que va a validar su identidad en un sistema determinado (el “consumidor” de OpenID).
+
+OpenID - Funcionamiento
+a. El usuario quiere acceder a su cuenta en un servidor.
+b. Si ese servidor soporta el protocolo OpenID (es “consumidor” de OpenID), solicita al usuario su OpenID (la URL externa del “proveedor” de OpenID).
+c. El usuario introduce o selecciona su OpenID.
+d. El servidor redirige al usuario al proveedor de OpenID.
+e. El usuario se autentica contra el proveedor de OpenID.
+f. El proveedor de OpenID redirige al usuario de vuelta al servidor, validando su identidad.
+
+OAuth
+El protocolo OAuth, es un protocolo de autorización, más exactamente, de delegación de acceso. Es decir, permite definir cómo un tercero va a acceder a los recursos propios.
+
+OAuth - Funcionamiento
+a. El usuario dispone de una serie de recursos propios en un servidor (el “proveedor”).
+b. Un servidor externo (el “consumidor”) desea acceder a un subconjunto de esos recursos.
+c. El consumidor redirige al usuario hacia el proveedor.
+d. El usuario se autentica en el proveedor (si no lo estaba previamente).
+e. El proveedor pregunta al usuario si autoriza al consumidor a que utilice esos determinados recursos.
+f.El usuario autoriza al consumidor a utilizar esos recursos. 
+g. El servidor externo (consumidor) consigue acceso a esos recursos.
+
+OpenID OAuth Hybrid Protocol
+Es una extensión de OpenID que permite la integración con Oauth 1.0.
+Al mismo tiempo identificamos y autorizamos a usar recursos
+
+OpenID Connect
+Es un draft por ahora, básicamente hace lo mismo que OpenID pero integra además dentro del protocolo Oauth 2.0.
+
+SAML
+Security Assertion Markup Language (SAML). 
+Basado en XML. 
+Este protocolo sirve de base para algunos sistemas propietarios de single-sign-on, pero no es utilizado por los grandes proveedores de servicios en Internet.

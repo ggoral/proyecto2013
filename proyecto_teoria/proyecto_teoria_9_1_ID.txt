@@ -49,7 +49,7 @@ b. Un servidor externo (el “consumidor”) desea acceder a un subconjunto de e
 c. El consumidor redirige al usuario hacia el proveedor.
 d. El usuario se autentica en el proveedor (si no lo estaba previamente).
 e. El proveedor pregunta al usuario si autoriza al consumidor a que utilice esos determinados recursos.
-f.El usuario autoriza al consumidor a utilizar esos recursos. 
+f. El usuario autoriza al consumidor a utilizar esos recursos. 
 g. El servidor externo (consumidor) consigue acceso a esos recursos.
 
 OpenID OAuth Hybrid Protocol

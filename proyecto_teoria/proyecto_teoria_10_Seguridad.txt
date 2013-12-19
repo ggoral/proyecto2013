@@ -19,8 +19,7 @@ El Proyecto OWASP
 
 Sólo vamos a ver algunas relacionadas con el desarrollo.
 
-A1 - Inyección: Ocurre cuando datos no confiables son enviados a un intérprete como parte de un comando o
-consulta.
+A1 - Inyección: Ocurre cuando datos no confiables son enviados a un intérprete como parte de un comando o consulta.
 
 Este tipo de vulnerabilidad es muy común.
 El atacante envía simples cadenas de texto que explotan la sintaxis del intérprete atacado.

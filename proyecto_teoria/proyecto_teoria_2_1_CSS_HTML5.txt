@@ -1,9 +1,9 @@
 CSS
  Documento HTML
-– Estructura
-- HTML
-– Presentación
-- Hojas de Estilo
+- Estructura
+-- HTML
+- Presentación
+-- Hojas de Estilo
 
 Una regla de estilo tiene dos partes:
 Un selector, que identifica el elemento o grupo al que el estilo se aplicará.

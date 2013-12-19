@@ -22,6 +22,21 @@ Es un repositorio de código y extensiones para PHP
 Templates en PHP
 Las librerías que permiten trabajar con templates definen una serie de clases a importar en nuestros scripts.
 
+Archivo de inicializacion de Twig
+1.require_once("Twig/Autoloader.php");
+2.$loader = new Twig_Loader_Filesystem($dir);
+2.$twig = new Twig_Environment($loader);
+3.$template = $twig->loadTemplate("prueba.tpl");
+// completar lo que se deba completar //
+3.$template->display();
+
+Veamos que hace:
+1.Antes que nada, debemos cargar la librería
+
+2.Twig utiliza un objeto (instancia de la clase Twig_Environment) utilizado para almacenar distintas opciones de configuración y utilizado para cargar los templates. En este caso, $dir contiene el nombre del directorio donde se encuentran los templates.
+
+3.Por último, cargamos el template y lo mostramos.
+
 Templates con Twig
 Los templates se utilizan para definir la vista.
 Tienen un formato especial.
